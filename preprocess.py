@@ -20,6 +20,9 @@ class SliceDataset(Dataset):
         img = tifffile.imread(str(image_path))
         mask = tifffile.imread(str(mask_path))
 
+        img = np.expand_dims(img, axis=0)
+        mask = np.expand_dims(mask, axis=0)
+
         return {
             "img": torch.from_numpy(img.astype(np.float32)), 
             "mask": torch.from_numpy(mask.astype(np.int64))
@@ -29,13 +32,14 @@ class SliceDataset(Dataset):
 
 train_dataset = SliceDataset(train_df)
 val_dataset = SliceDataset(val_df)
-dataloader = DataLoader(train_dataset, batch_size=4)
+train_dataloader = DataLoader(train_dataset, batch_size=4)
+val_dataloader = DataLoader(val_dataset, batch_size = 1)
 
 # visualize image and mask overlay from one batch
-batch = next(iter(dataloader))
+batch = next(iter(val_dataloader))
 imgs, masks = batch["img"].numpy(), batch["mask"].numpy()
 n = min(4, len(imgs))
-fig, axs = plt.subplots(1, n, figsize=(4 * n, 4))
+fig, axs = plt.subplots(1, n)
 for i in range(n):
     ax = axs[i] if n > 1 else axs
     ax.imshow(imgs[i], cmap="gray")
