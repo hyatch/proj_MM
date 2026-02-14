@@ -3,7 +3,6 @@ from torch.utils.data import DataLoader, Dataset
 import pandas as pd
 from pathlib import Path
 import tifffile
-import matplotlib.pyplot as plt
 import numpy as np
 
 df = pd.read_csv("image_mask.csv")
@@ -35,18 +34,4 @@ val_dataset = SliceDataset(val_df)
 train_dataloader = DataLoader(train_dataset, batch_size=4)
 val_dataloader = DataLoader(val_dataset, batch_size = 1)
 
-# visualize image and mask overlay from one batch
-batch = next(iter(val_dataloader))
-imgs, masks = batch["img"].numpy(), batch["mask"].numpy()
-n = min(4, len(imgs))
-fig, axs = plt.subplots(1, n)
-for i in range(n):
-    ax = axs[i] if n > 1 else axs
-    ax.imshow(imgs[i], cmap="gray")
-    ax.imshow(masks[i], alpha=0.4, cmap="Reds")
-    ax.set_title(f"Sample {i}")
-    ax.axis("off")
-plt.tight_layout()
-plt.savefig("overlay.png")
-plt.show()
-
+train_batch = next(iter(train_dataloader))
