@@ -21,6 +21,8 @@ class SliceDataset(Dataset):
 
         img = np.expand_dims(img, axis=0)
         mask = np.expand_dims(mask, axis=0)
+        
+        img /= 255
 
         return {
             "img": torch.from_numpy(img.astype(np.float32)), 
@@ -31,7 +33,5 @@ class SliceDataset(Dataset):
 
 train_dataset = SliceDataset(train_df)
 val_dataset = SliceDataset(val_df)
-train_dataloader = DataLoader(train_dataset, batch_size=4)
+train_dataloader = DataLoader(train_dataset, batch_size=4, shuffle = True)
 val_dataloader = DataLoader(val_dataset, batch_size = 1)
-
-train_batch = next(iter(train_dataloader))

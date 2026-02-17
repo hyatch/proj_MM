@@ -1,4 +1,3 @@
-import wandb
 import torch
 import torch.nn as nn
 
@@ -45,6 +44,6 @@ class UNet(nn.Module):
         x = self.up4(x)
         x = torch.cat([x1, x], dim = 1)
         x = self.out(x)
-
-def main():
+        return x
+    
     
