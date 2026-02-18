@@ -1,0 +1,61 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            90ad9gtqurm7diy003t5bptloqcski6a:
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 4
+                cpu_count_logical: 8
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "499249049600"
+                        used: "462572003328"
+                email: eyh002@ucsd.edu
+                executable: C:\Users\User\anaconda3\python.exe
+                git:
+                    commit: 11097da93ef52ffb5afb2fdff41f6531b2283013
+                    remote: https://github.com/hyatch/proj_MM.git
+                gpu: NVIDIA GeForce MX330
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Pascal
+                      cudaCores: 384
+                      memoryTotal: "2147483648"
+                      name: NVIDIA GeForce MX330
+                      uuid: GPU-8bfe046c-4987-23ee-91dd-93740300932e
+                host: DESKTOP-FSQ2J7T
+                memory:
+                    total: "16866623488"
+                os: Windows-11-10.0.26200-SP0
+                program: C:\Users\User\Downloads\python\proj_MM\train.py
+                python: CPython 3.12.4
+                root: C:\Users\User\Downloads\python\proj_MM
+                startedAt: "2026-02-18T00:58:59.429273Z"
+                writerId: 90ad9gtqurm7diy003t5bptloqcski6a
+        m: []
+        python_version: 3.12.4
+        t:
+            "1":
+                - 1
+                - 41
+            "2":
+                - 1
+                - 41
+            "3":
+                - 16
+            "4": 3.12.4
+            "5": 0.25.0
+            "8":
+                - 3
+            "12": 0.25.0
+            "13": windows-amd64
+architecture:
+    value: U-Net
+dataset:
+    value: MM
+epochs:
+    value: 6
+learning_rate:
+    value: 0.02

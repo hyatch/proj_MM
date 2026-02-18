@@ -1,0 +1,25 @@
+using cuda
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\python\proj_MM\train.py", line 66, in <module>
+    for batch_idx, (image, mask) in enumerate(val_dataloader):
+  File "C:\Users\User\anaconda3\Lib\site-packages\torch\utils\data\dataloader.py", line 733, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torch\utils\data\dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\Downloads\python\proj_MM\preprocess.py", line 24, in __getitem__
+    img = TF.resize(img, [2048,2048])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torchvision\transforms\functional.py", line 465, in resize
+    _, image_height, image_width = get_dimensions(img)
+                                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torchvision\transforms\functional.py", line 80, in get_dimensions
+    return F_pil.get_dimensions(img)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torchvision\transforms\_functional_pil.py", line 31, in get_dimensions
+    raise TypeError(f"Unexpected type {type(img)}")
+TypeError: Unexpected type <class 'tuple'>

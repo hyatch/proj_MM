@@ -1,0 +1,40 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "CPython 3.12.4",
+  "startedAt":  "2026-02-18T00:17:38.743031Z",
+  "program":  "C:\\Users\\User\\Downloads\\python\\proj_MM\\train.py",
+  "codePath":  "train.py",
+  "codePathLocal":  "train.py",
+  "git":  {
+    "remote":  "https://github.com/hyatch/proj_MM.git",
+    "commit":  "11097da93ef52ffb5afb2fdff41f6531b2283013"
+  },
+  "email":  "eyh002@ucsd.edu",
+  "root":  "C:\\Users\\User\\Downloads\\python\\proj_MM",
+  "host":  "DESKTOP-FSQ2J7T",
+  "executable":  "C:\\Users\\User\\anaconda3\\python.exe",
+  "cpu_count":  4,
+  "cpu_count_logical":  8,
+  "gpu":  "NVIDIA GeForce MX330",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "499249049600",
+      "used":  "462505029632"
+    }
+  },
+  "memory":  {
+    "total":  "16866623488"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce MX330",
+      "memoryTotal":  "2147483648",
+      "cudaCores":  384,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-8bfe046c-4987-23ee-91dd-93740300932e"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "lzbo4mdazjx5a7o51v07q1g3mef18lpn"
+}

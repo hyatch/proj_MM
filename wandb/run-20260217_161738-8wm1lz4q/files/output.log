@@ -1,0 +1,6 @@
+using cuda
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\python\proj_MM\train.py", line 67, in <module>
+    image = image.to(device)
+            ^^^^^^^^
+AttributeError: 'str' object has no attribute 'to'

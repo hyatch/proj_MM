@@ -1,0 +1,1 @@
+{"_runtime":317,"_step":1,"val_img":{"count":2,"filenames":["media/images/val_img_0_5204479664c265752c9a.png","media/images/val_img_0_e7e746011b4aa5eb384e.png"],"captions":["Input","Pred"],"_type":"images/separated","width":2048,"height":2048,"format":"png"},"_timestamp":1.7713764253427877e+09,"val_dice_score":0.059256017208099365,"epoch":0,"_wandb":{"runtime":317}}

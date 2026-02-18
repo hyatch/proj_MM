@@ -1,0 +1,18 @@
+using cuda
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\python\proj_MM\train.py", line 70, in <module>
+    logits = model(image)
+             ^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Downloads\python\proj_MM\model.py", line 57, in forward
+    x = torch.cat([x1, x], dim = 1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

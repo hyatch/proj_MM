@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\python\proj_MM\train.py", line 53, in <module>
+    model = UNet(in_channels = 1)
+            ^^^^^^^^^^^^^^^^^^^^^
+TypeError: UNet.__init__() got an unexpected keyword argument 'in_channels'

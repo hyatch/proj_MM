@@ -4,10 +4,7 @@ import pandas as pd
 from pathlib import Path
 import tifffile
 import numpy as np
-
-df = pd.read_csv("image_mask.csv")
-train_df = df.iloc[0:4]
-val_df = df.iloc[-1:]
+import torchvision.transforms.functional as TF
 
 class SliceDataset(Dataset):
     def __init__(self, dataframe):
@@ -21,17 +18,15 @@ class SliceDataset(Dataset):
 
         img = np.expand_dims(img, axis=0)
         mask = np.expand_dims(mask, axis=0)
+        img = torch.from_numpy(img.astype(np.float32))/255.0
+        mask = torch.from_numpy(mask.astype(np.float32))
         
-        img /= 255
+        img = TF.resize(img, [2048,2048])
+        mask = TF.resize(mask, [2048,2048], interpolation=TF.InterpolationMode.NEAREST)
 
-        return {
-            "img": torch.from_numpy(img.astype(np.float32)), 
-            "mask": torch.from_numpy(mask.astype(np.int64))
-        }
+        return (
+            img, mask
+        )
     def __len__(self):
         return len(self.dataframe)
 
-train_dataset = SliceDataset(train_df)
-val_dataset = SliceDataset(val_df)
-train_dataloader = DataLoader(train_dataset, batch_size=4, shuffle = True)
-val_dataloader = DataLoader(val_dataset, batch_size = 1)
